@@ -83,9 +83,17 @@ function App() {
   const updateService = (e) => {
     e.preventDefault();
 
+const updatedService = {
+      ...newService,  
+      id: editingService.id,  
+      price: parseFloat(newService.price)  
+    };
+
+    
+
     setServices(
       services.map((service) =>
-        service.id === editingService.id ? newService : service
+        service.id === editingService.id ? updatedService : service
       )
     );
 
